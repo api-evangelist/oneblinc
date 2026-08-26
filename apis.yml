@@ -1,7 +1,17 @@
 aid: oneblinc
 name: OneBlinc
-description: 'OneBlinc is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  OneBlinc is a US consumer fintech that provides cash advances, credit-building and financial-wellness
+  products to public-sector, healthcare and other essential workers who are underserved by traditional
+  banks. Its consumer products are delivered through the OneBlinc / BlincAdvance mobile apps —
+  BlincAdvance (paycheck advances from $50 up to $250 on an $8.99/month subscription, with an optional
+  paid instant-deposit tier), BlincBoost (a credit-building subscription), BlincShield and BlincEarn — and
+  a legacy installment-loan product originated by BlincLoans, Inc. that is not currently accepting new
+  applications. Its one business-facing product, BlincFy, sells customer-permissioned income and
+  employment verification data and analytics, but is sold through a "Schedule a Demo" sales motion with no
+  public developer documentation. OneBlinc publishes no public API, developer portal, SDK or
+  machine-readable specification; api.oneblinc.com is a private backend for its own mobile clients.
+image: https://www.oneblinc.com/images/meta-logo.png
 url: https://raw.githubusercontent.com/api-evangelist/oneblinc/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +22,15 @@ created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
+- Financial Services
+- Fintech
+- Consumer Lending
+- Cash Advance
+- Earned Wage Access
+- Credit Building
+- Income Verification
+- Mobile Banking
+- United States
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +39,50 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.oneblinc.com/
+- type: SignUp
+  url: https://www.oneblinc.com/sign-up
+- type: Support
+  url: https://oneblinc.zendesk.com/hc/en-us
+- type: GitHubOrganization
+  url: https://github.com/OneBlinc
+- type: Compliance
+  url: https://www.oneblinc.com/compliance
+- type: StatusPage
+  url: https://status.oneblinc.com/
+- type: Lifecycle
+  url: lifecycle/oneblinc-lifecycle.yml
+- type: Conformance
+  url: conformance/oneblinc-conformance.yml
+- type: DomainSecurity
+  url: security/oneblinc-domain-security.yml
+- type: Plans
+  url: plans/oneblinc-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/oneblinc-rate-limits.yml
+- type: LLMsTxt
+  url: llms/oneblinc-llms.txt
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 8
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    OneBlinc ships only end-user mobile and web apps — its Next.js route manifest lists no /developers,
+    /api or /docs route, its GitHub org has zero public repositories, and its one business product
+    (BlincFy income verification) is sold behind a "Schedule a Demo" form; api.oneblinc.com is a real
+    origin but returns a 0-byte HTTP 404 on every discovery path, so it is a private app backend, not a
+    published API.
+  evidence:
+  - url: https://api.oneblinc.com/openapi.json
+    status: 404
+  - url: https://api.oneblinc.com/graphql
+    status: 404
+  - url: https://api.github.com/orgs/OneBlinc/repos
+    status: 200
+  - url: https://www.oneblinc.com/products/blinc-fy
+    status: 200
+  checked: '2026-08-26'

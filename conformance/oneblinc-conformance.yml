@@ -1,0 +1,134 @@
+generated: '2026-08-26'
+method: searched
+source: https://www.oneblinc.com/compliance
+note: >-
+  There is no OpenAPI, GraphQL SDL, AsyncAPI or any other machine-readable contract from which to derive
+  technical conformance, so every cross-cutting technical standard below is recorded as not-conformant
+  because it is unevidenced, not because it was tested and failed. What OneBlinc DOES publish is a real
+  regulatory compliance posture — a state-by-state consumer lending licence table with linked licence
+  PDFs, an NMLS Consumer Access registration, an ISO/IEC 27001 badge and an ISMS policy — and that is
+  captured below with its evidence.
+standards:
+- id: openapi
+  conforms: false
+  evidence: >-
+    No OpenAPI served on any OneBlinc host. Probed /openapi.json, /openapi.yaml, /swagger.json,
+    /v1/openapi.json, /api-docs, /docs, /redoc and /v3/api-docs on api.oneblinc.com (all 404, 0 bytes)
+    and on www.oneblinc.com, blincadvance.oneblinc.com and dashboard.oneblinc.com (all SPA soft-404s).
+- id: graphql
+  conforms: false
+  evidence: /graphql returns HTTP 404 (0 bytes) on api.oneblinc.com. No GraphQL surface advertised.
+- id: asyncapi
+  conforms: false
+  evidence: No event, streaming or webhook surface is documented anywhere on the public site.
+- id: oauth2
+  conforms: false
+  evidence: >-
+    /.well-known/oauth-authorization-server returns 404 on api.oneblinc.com. No OAuth documentation is
+    published. Note OneBlinc is an OAuth CONSUMER, not a provider — /plaid-oauth is a route in its own web
+    app for completing a Plaid bank-linking redirect.
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 404 on api.oneblinc.com.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No contract or error reference published.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: >-
+    /.well-known/security.txt returns 404 on api.oneblinc.com and an SPA soft-404 on every web host.
+- id: rfc8594-sunset
+  conforms: false
+  evidence: No deprecation or sunset policy published.
+- id: mcp
+  conforms: false
+  evidence: No MCP server advertised or discoverable on any host.
+- id: a2a-agent-card
+  conforms: false
+  evidence: >-
+    /.well-known/agent-card.json and /.well-known/agent.json probed on all five hosts. api.oneblinc.com
+    and status.oneblinc.com returned genuine 404s; the three SPA hosts returned catch-all HTML shells,
+    which are not agent cards. No a2a/ artifact was written.
+domain_standard:
+  applicable_regime: null
+  note: >-
+    OneBlinc's market — US consumer cash advance / earned wage access — has no published API domain
+    standard in scoring.yml's regime list, and OneBlinc declares none. REWARD-ONLY dimension: recorded as
+    not applicable rather than as a failure. The closest adjacent regime is banking_open_finance (FDX,
+    FAPI), and OneBlinc participates in that ecosystem only as a CONSUMER of aggregator APIs (Plaid,
+    Argyle, StitchCredit, TabaPay all appear in its own Content-Security-Policy allowlist), not as a
+    publisher of a conformant contract.
+regulatory_posture:
+  regime: US state consumer lending / consumer credit
+  published: true
+  page: https://www.oneblinc.com/compliance
+  http_status: 200
+  registrations:
+  - authority: NMLS Consumer Access
+    identifier: '1813996'
+    url: https://www.nmlsconsumeraccess.org/EntityDetails.aspx/COMPANY/1813996
+  state_licences:
+  - state: Alabama
+    number: MC 22672
+    type: Consumer Credit License
+    entity: BLINCLOANS, INC
+  - state: Arizona
+    type: Consumer Lender License
+    entity: BLINCLOANS, INC
+  - state: California
+    type: state lending licence
+    entity: BLINCLOANS, INC
+  - state: Florida
+    type: state lender licence
+    entity: BLINCLOANS, INC
+  - state: Missouri
+    type: state lender licence
+    entity: BLINCLOANS, INC
+  - state: Texas
+    type: state lender licence
+    entity: BLINCLOANS, INC
+  - state: Utah
+    type: Certificate of Acknowledgement
+    entity: BLINCLOANS, INC
+  - state: Virginia
+    type: state lender licence
+    entity: BLINCLOANS, INC
+  note: >-
+    The licence table on /compliance is longer than the list above; only the entries whose linked PDF was
+    observed in the page markup are recorded here. Licence PDFs are served from
+    staging-public.triton.oneblinc.com, an S3-backed bucket that returns HTTP 403 on its root listing.
+  disclosures:
+  - name: CCPA rights disclosure
+    evidence: >-
+      "If you are a California resident, the California Consumer Privacy Act ('CCPA') provides you certain
+      rights..." — site footer legal disclaimers.
+certifications:
+- name: ISO/IEC 27001
+  claimed: true
+  evidence: >-
+    OneBlinc renders an ISO/IEC 27001 badge on its own homepage in a dedicated component
+    (CSS class iso-certifies_iso-certifies, asset "ISO-IEC 27001 - V3.png") and links an "ISMS Policy"
+    from the site footer. The badge is a self-published claim; no certificate number, certification body
+    or scope statement is disclosed, and the ISMS Policy opens as a JavaScript modal with no linkable URL,
+    so the claim could not be independently verified.
+  verified: false
+  source: https://www.oneblinc.com/
+- name: CompliAssure SiteSeal
+  claimed: true
+  evidence: Site seal image rendered on the homepage (alt="CompliAssure SiteSeal").
+  verified: false
+  source: https://www.oneblinc.com/
+- name: SOC 2
+  claimed: false
+  evidence: No SOC 2, PCI DSS, HIPAA or FedRAMP claim found anywhere on the public site.
+x-evidence:
+- url: https://www.oneblinc.com/compliance
+  status: 200
+- url: https://api.oneblinc.com/openapi.json
+  status: 404
+- url: https://api.oneblinc.com/graphql
+  status: 404
+- url: https://api.oneblinc.com/.well-known/openid-configuration
+  status: 404
+- url: https://staging-public.triton.oneblinc.com/
+  status: 403

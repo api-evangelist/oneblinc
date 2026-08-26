@@ -1,0 +1,159 @@
+generated: '2026-08-26'
+method: probed
+source: >-
+  Direct HTTPS probes of every OneBlinc host discovered in this pass (marketing site, API host, customer
+  dashboard, app landing host, status host). No document was served; nothing was saved.
+note: >-
+  ZERO HITS. www.oneblinc.com, blincadvance.oneblinc.com and dashboard.oneblinc.com are single-page
+  applications whose edge answers HTTP 200 with the SAME byte-identical HTML shell for EVERY path,
+  including paths that cannot exist. Those 200s are soft-404s, not documents, so no file was saved and no
+  WellKnown / SecurityTxt pointer is emitted. api.oneblinc.com is a real application server (Django-style
+  security headers) but returns a genuine 0-byte 404 on every discovery path. status.oneblinc.com
+  (HetrixTools) returns genuine 404s.
+hit_count: 0
+hosts:
+- host: https://www.oneblinc.com
+  soft_404_control:
+    note: >-
+      Control probe. Every path below returned HTTP 200 with a body of exactly 124404 bytes — identical to
+      the site homepage — so a 200 here carries no information.
+    control_path: /openapi.json
+    control_status: 200
+    control_bytes: 124404
+    homepage_bytes: 124404
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: soft-404 — SPA shell (124404 bytes, identical to homepage). Not a document.
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document.
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document.
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document.
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document.
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document. No A2A artifact written.
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document. No A2A artifact written.
+- host: https://api.oneblinc.com
+  soft_404_control:
+    note: >-
+      Real origin. Returns HTTP/2 404 with content-length 0 and application security headers
+      (x-content-type-options, referrer-policy same-origin, cross-origin-opener-policy same-origin).
+      A 404 here is a true negative.
+    control_path: /
+    control_status: 404
+    control_bytes: 0
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: https://dashboard.oneblinc.com
+  soft_404_control:
+    note: Create-React-App shell; every path returns HTTP 200 with an identical 17645-byte body.
+    control_path: /openapi.json
+    control_status: 200
+    control_bytes: 17645
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document.
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document.
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document.
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document.
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document.
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document.
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document.
+- host: https://blincadvance.oneblinc.com
+  soft_404_control:
+    note: >-
+      CloudFront-fronted Next.js marketing shell; every path returns HTTP 200 with an identical
+      80804-byte body.
+    control_path: /openapi.json
+    control_status: 200
+    control_bytes: 80804
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document.
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document.
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document.
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document.
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document.
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    note: soft-404 — SPA shell. Not a document.
+- host: https://status.oneblinc.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null

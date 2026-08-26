@@ -1,0 +1,74 @@
+generated: '2026-08-26'
+method: searched
+source: >-
+  Registry search across npm, PyPI, RubyGems, Packagist, crates.io, NuGet and the OneBlinc GitHub
+  organization on 2026-08-26.
+note: >-
+  NO FIRST-PARTY CLIENT LIBRARIES EXIST. OneBlinc publishes no API, so there is nothing for an SDK to
+  wrap. Its GitHub organization (github.com/OneBlinc, created 2020-05-04) is real and reachable but has
+  ZERO public repositories. No SDKs pointer is emitted. The only shipped OneBlinc software artifacts are
+  end-user mobile applications, recorded below for currency — they are consumer apps, not developer
+  packages, so they carry no registry entry.
+package_count: 0
+packages: []
+registries_probed:
+- registry: npm
+  query: oneblinc
+  results: 0
+  note: >-
+    A package named "blinc" exists (version 0.0.7, published 2022-01-29) but is unrelated to OneBlinc and
+    is NOT claimed as first-party.
+- registry: pypi
+  query: oneblinc
+  status: 404
+  results: 0
+- registry: rubygems
+  query: oneblinc
+  status: 404
+  results: 0
+- registry: packagist
+  query: oneblinc
+  results: 0
+- registry: crates.io
+  query: oneblinc
+  results: 0
+- registry: nuget
+  query: oneblinc
+  results: 0
+- registry: github
+  query: orgs/OneBlinc/repos
+  status: 200
+  results: 0
+  note: Organization exists, public_repos = 0.
+mobile_applications:
+- name: OneBlinc Cash Advance
+  platform: ios
+  registry: app-store
+  identifier: com.blincadvance
+  url: https://apps.apple.com/us/app/blincadvance/id1593417965
+  version: 7.12.0
+  published: '2026-08-17'
+  official: true
+  note: >-
+    End-user application, not a developer package. Seller of record is "Blincloans, LLC". Currency read
+    from the iTunes lookup metadata endpoint.
+- name: OneBlinc Cash Advance
+  platform: android
+  registry: google-play
+  identifier: com.oneblinc.advance
+  url: https://play.google.com/store/apps/details?id=com.oneblinc.advance
+  version: null
+  published: null
+  official: true
+  note: >-
+    Listing returns HTTP 200. Google Play publishes no unauthenticated metadata endpoint, so version and
+    release date were not read — checked, nothing recordable, not a guess.
+x-evidence:
+- url: https://registry.npmjs.org/-/v1/search?text=oneblinc&size=20
+  status: 200
+- url: https://pypi.org/pypi/oneblinc/json
+  status: 404
+- url: https://api.github.com/orgs/OneBlinc/repos
+  status: 200
+- url: https://itunes.apple.com/lookup?id=1593417965
+  status: 200

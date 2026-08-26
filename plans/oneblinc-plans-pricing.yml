@@ -1,0 +1,73 @@
+generated: '2026-08-26'
+method: searched
+source: https://itunes.apple.com/lookup?id=1593417965
+docs: https://www.oneblinc.com/products/blinc-advance
+note: >-
+  OneBlinc publishes NO API plans, because it publishes no API. These are its CONSUMER product plans, and
+  the only place the subscription price is stated in full is the App Store listing — the marketing site
+  has no /pricing page and the /calculator route is a soft-404 that returns the homepage. The one
+  business-facing product, BlincFy, is sold entirely through a "Schedule a Demo" form with no published
+  price. Values below are quoted verbatim from the provider's own copy; nothing is estimated.
+plan_count: 3
+currency: USD
+plans:
+- name: BlincAdvance subscription
+  audience: consumer
+  price: 8.99
+  currency: USD
+  billing_period: month
+  cancellation: Cancel anytime within the app.
+  included: >-
+    Cash advances starting at $50, building up to $250 over time (eligibility rules apply). No interest,
+    no late fees. Standard advance deposit is free.
+  overage: >-
+    Optional paid "instant delivery" tier — the provider states "Choose instant delivery for a fee" but
+    does not publish the fee amount.
+  limits:
+  - Advance amount starts at $50 and increases to a maximum of $250 with account progression.
+  - Repaid automatically from the linked bank account on the next payday.
+  source: https://itunes.apple.com/lookup?id=1593417965
+- name: BlincBoost
+  audience: consumer
+  price: null
+  currency: USD
+  billing_period: month
+  included: >-
+    Monthly subscription credit-building service with unlimited access to the user's credit score.
+  note: >-
+    Described by the provider as "one simple, transparent" monthly subscription, but the amount is not
+    published on the product page.
+  source: https://www.oneblinc.com/products/blinc-boost
+- name: BlincFy
+  audience: business
+  price: null
+  currency: USD
+  billing_period: null
+  included: >-
+    Customer-permissioned income and employment verification data, analytics and personalised reports,
+    with dedicated partner support.
+  onboarding: contact-sales
+  note: >-
+    No published price and no self-serve signup — the only call to action is "Schedule a Demo". This is
+    the enterprise "contact us" case.
+  source: https://www.oneblinc.com/products/blinc-fy
+legacy_products:
+- name: BlincLoans installment loan (legacy, closed to new applicants)
+  note: >-
+    Retained because the terms are still published on the site footer and are the only itemised pricing
+    OneBlinc discloses. Fixed simple interest rate of 35.9%. One-time fee ranging from $0-$88.90 added to
+    the loan; loan amounts $1,000-$6,000 depending on state of residence. Worked example given by the
+    provider: a $2,000 loan in Texas — finance charge $314.81, origination fee $25, repayable in 24
+    biweekly payments, interest rate 29.90%, APR 32.75%, installments of $97. Minimum 12 and maximum 84
+    biweekly payments.
+  source: https://www.oneblinc.com/loans
+x-evidence:
+- url: https://itunes.apple.com/lookup?id=1593417965
+  status: 200
+- url: https://www.oneblinc.com/products/blinc-advance
+  status: 200
+- url: https://www.oneblinc.com/products/blinc-fy
+  status: 200
+- url: https://www.oneblinc.com/calculator
+  status: 200
+  note: soft-404 — returns the homepage, not a pricing calculator.

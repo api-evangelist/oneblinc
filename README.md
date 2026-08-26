@@ -64,5 +64,19 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-OneBlinc is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+OneBlinc is a US consumer fintech that provides cash advances, credit-building and financial-wellness
+products to public-sector, healthcare and other essential workers who are underserved by traditional
+banks. Its consumer products ship as mobile apps — BlincAdvance (paycheck advances from $50 up to $250 on
+an $8.99/month subscription), BlincBoost, BlincShield and BlincEarn — alongside a legacy installment-loan
+product from BlincLoans, Inc. that is not currently accepting new applications. Its one business-facing
+product, BlincFy, sells customer-permissioned income and employment verification data and is sold through
+a "Schedule a Demo" motion.
+
+**OneBlinc publishes no public API, developer portal, SDK or machine-readable specification.** This
+profile records that absence with its evidence rather than leaving it unexplained — see `x-coverage` in
+`apis.yml` and the probe records in `well-known/` and `conformance/`.
+
+- https://www.oneblinc.com/
+- https://www.oneblinc.com/compliance
+- https://status.oneblinc.com/
+- https://oneblinc.zendesk.com/hc/en-us

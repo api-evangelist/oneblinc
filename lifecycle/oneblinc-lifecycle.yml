@@ -1,0 +1,73 @@
+generated: '2026-08-26'
+method: probed
+source: https://status.oneblinc.com/
+note: >-
+  OneBlinc publishes no API, so there is no API versioning, deprecation or sunset policy to capture. What
+  it does operate is a public uptime page on its own subdomain. Product lifecycle events were read from
+  the company's own pages and app-store metadata.
+api_versioning:
+  scheme: null
+  current_version: null
+  evidence: >-
+    No public API, developer portal or reference exists; nothing states a versioning scheme.
+deprecation_policy:
+  published: false
+  sunset_header: unknown
+  deprecation_header: unknown
+  evidence: No developer documentation of any kind is published.
+sla:
+  published: false
+  evidence: No API SLA or uptime commitment is published.
+status_page:
+  published: true
+  url: https://status.oneblinc.com/
+  http_status: 200
+  provider: HetrixTools
+  title: Triton Status Page
+  note: >-
+    Live on OneBlinc's own subdomain (CNAME to reports.hetrixtools.com). "Triton" is OneBlinc's internal
+    platform name — the same name appears on staging-public.triton.oneblinc.com, the bucket that serves
+    its state lending-license PDFs. The page renders seven-day uptime bars and an SLA uptime calculator.
+    It is NOT linked from the marketing site navigation or footer; it was found by subdomain probe.
+    It reports platform uptime, not per-API component status.
+product_lifecycle:
+- product: Installment loans (BlincLoans, Inc.)
+  state: paused
+  evidence: >-
+    "While we are temporarily not accepting new loan applications" — https://www.oneblinc.com/loans
+  source: https://www.oneblinc.com/loans
+- product: BlincAdvance
+  state: generally-available
+  source: https://www.oneblinc.com/products/blinc-advance
+- product: BlincBoost
+  state: generally-available
+  source: https://www.oneblinc.com/products/blinc-boost
+- product: BlincEarn
+  state: pre-launch
+  evidence: Product page offers "Pre-register" rather than a download or signup.
+  source: https://www.oneblinc.com/products/blinc-earn
+- product: BlincFy
+  state: generally-available
+  evidence: Sold through a "Schedule a Demo" form; no self-serve onboarding.
+  source: https://www.oneblinc.com/products/blinc-fy
+client_releases:
+- name: OneBlinc Cash Advance (iOS)
+  bundle_id: com.blincadvance
+  version: 7.12.0
+  published: '2026-08-17'
+  first_released: '2022-01-03'
+  seller: Blincloans, LLC
+  source: https://itunes.apple.com/lookup?id=1593417965
+- name: OneBlinc Cash Advance (Android)
+  package: com.oneblinc.advance
+  version: null
+  published: null
+  note: Play Store listing returns 200; version metadata not read in this pass.
+  source: https://play.google.com/store/apps/details?id=com.oneblinc.advance
+x-evidence:
+- url: https://status.oneblinc.com/
+  status: 200
+- url: https://www.oneblinc.com/loans
+  status: 200
+- url: https://itunes.apple.com/lookup?id=1593417965
+  status: 200
