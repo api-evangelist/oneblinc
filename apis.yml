@@ -11,6 +11,17 @@ description: >-
   employment verification data and analytics, but is sold through a "Schedule a Demo" sales motion with no
   public developer documentation. OneBlinc publishes no public API, developer portal, SDK or
   machine-readable specification; api.oneblinc.com is a private backend for its own mobile clients.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.oneblinc.com/images/meta-logo.png
 url: https://raw.githubusercontent.com/api-evangelist/oneblinc/refs/heads/main/apis.yml
 x-type: company
