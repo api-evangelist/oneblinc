@@ -47,7 +47,7 @@ created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
-- Financial-Services
+- Financial Services
 - Fintech
 - Consumer Lending
 - Cash Advance
@@ -67,6 +67,7 @@ tags_raw:
 - Income Verification
 - Mobile Banking
 - United States
+- Financial-Services
 apis: []
 maintainers:
 - FN: Kin Lane
