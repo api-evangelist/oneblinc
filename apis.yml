@@ -75,6 +75,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Pricing
+  url: https://itunes.apple.com/lookup?id=1593417965
 - url: https://www.oneblinc.com/blog/
   type: Blog
 - type: Website
