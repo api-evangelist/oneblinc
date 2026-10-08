@@ -71,3 +71,28 @@ x-evidence:
 - url: https://www.oneblinc.com/calculator
   status: 200
   note: soft-404 — returns the homepage, not a pricing calculator.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  units: []
+  plans:
+  - name: BlincAdvance subscription
+    access: other
+    model: hybrid
+    model_how: derived
+    units: []
+    periods: []
+  - name: BlincBoost
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: BlincFy
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
